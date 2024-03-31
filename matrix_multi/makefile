@@ -1,5 +1,5 @@
 # File name
-FN = thread_pool
+FN = main
 
 # Compiler
 CC = gcc
