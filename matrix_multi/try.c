@@ -4,7 +4,7 @@
 #include <time.h>
 #include <stdbool.h>
 
-#define N 100
+#define N 1024
 #define NUM_THREADS 12
 
 // Global var
@@ -59,6 +59,7 @@ int main()
 		}
         pthread_attr_init(&attr[i]);
         pthread_create(&tid[i], &attr[i], runner, data);
+		printf(">> %d\n",data->end);
     }
 
     // Wait for threads
