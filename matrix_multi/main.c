@@ -5,7 +5,7 @@
 #include <stdbool.h>
 
 #define N 100
-#define NUM_THREADS 10000
+#define NUM_THREADS 12
 
 // Global var
 int A [N][N];
