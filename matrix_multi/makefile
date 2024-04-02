@@ -1,5 +1,5 @@
 # File name
-FN = try
+FN = after
 
 # Compiler
 CC = gcc
