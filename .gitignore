@@ -1,5 +1,10 @@
-*
+# 忽略所有文件
+**
+
+# 但不忽略目录，这样Git可以进入目录检查文件
+!**/
+
+# 不忽略 .c 和 .cuda 文件以及 Makefile
 !*.c
-!Makefile
-!*.md
 !*.cuda
+!Makefile
