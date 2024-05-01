@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <cuda_runtime.h>
 
-#define N   16
+#define N 16
 __global__ void add( int *a, int *b, int *c ){
     int tid = threadIdx.x;
     c[tid] = a[tid] + b[tid];

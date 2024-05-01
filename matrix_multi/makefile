@@ -9,7 +9,7 @@ CFLAGS += -Wall
 CFLAGS += -Wextra
 CFLAGS += -g
 CFLAGS += -Werror
-CFLAGS += -lpthread
+CFLAGS += -pthread
 # CFLAGS += -Wl
 # CFLAGS += -lrt
 

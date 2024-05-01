@@ -6,5 +6,6 @@
 
 # 不忽略 .c 和 .cuda 文件以及 Makefile
 !*.c
-!*.cuda
+!*.cu
 !Makefile
+!makefile
