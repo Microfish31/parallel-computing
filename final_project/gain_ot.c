@@ -95,10 +95,10 @@ int decode_and_encode_mp3(const char *input_file, const char *output_file, doubl
         while (1) {
             if (mad_frame_decode(&frame, &stream) != MAD_ERROR_NONE) {
                 if (MAD_RECOVERABLE(stream.error)) {
-                    fprintf(stderr, "Recoverable error: %s\n", mad_stream_errorstr(&stream));
+                    // fprintf(stderr, "Recoverable error: %s\n", mad_stream_errorstr(&stream));
                     continue; // Ignore recoverable errors
                 } else {
-                    fprintf(stderr, "Unrecoverable error: %s\n", mad_stream_errorstr(&stream));
+                    // fprintf(stderr, "Unrecoverable error: %s\n", mad_stream_errorstr(&stream));
                     break; // Decoding error, exit loop
                 }
             }

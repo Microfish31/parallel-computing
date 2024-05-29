@@ -1,5 +1,5 @@
 # File name
-FN = try2
+FN = main
 
 # Compiler
 CC = gcc
@@ -9,7 +9,7 @@ CFLAGS += -Wall
 CFLAGS += -Wextra
 CFLAGS += -g
 CFLAGS += -Werror
-# CFLAGS += -lpthread
+CFLAGS += -lpthread
 
 LDFLAGS += -lmad 
 LDFLAGS += -lmp3lame
@@ -43,5 +43,5 @@ clean:
 
 # Run target
 run:
-	./$(EXECUTABLE) input.mp3 output.mp3 1.8
-	cp output.mp3 /mnt/d/output.mp3
+	./$(EXECUTABLE) input.mp3 1.8
+	# cp output.mp3 /mnt/d/output.mp3
