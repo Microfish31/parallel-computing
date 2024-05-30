@@ -76,6 +76,7 @@ int decode_and_encode_mp3(const char *input_file, const char *output_file, doubl
     mad_stream_buffer(&stream, NULL, 0); // Clear input stream buffer
     mad_stream_options(&stream, MAD_OPTION_IGNORECRC); // Ignore CRC errors
 
+    int count =0;
     // Read and decode the input file
     while (1) {
         // Read data from input file into input stream buffer
@@ -124,6 +125,8 @@ int decode_and_encode_mp3(const char *input_file, const char *output_file, doubl
             int mp3_bytes = lame_encode_buffer(lame, pcm_samples_left, pcm_samples_right, synth.pcm.length, mp3_buffer, sizeof(mp3_buffer));
             if (mp3_bytes > 0) {
                 fwrite(mp3_buffer, 1, mp3_bytes, output);
+                printf(">> %d\n",mp3_bytes);
+                count++;
             }
         }
     }
@@ -133,8 +136,11 @@ int decode_and_encode_mp3(const char *input_file, const char *output_file, doubl
     int mp3_bytes = lame_encode_flush(lame, mp3_buffer, sizeof(mp3_buffer));
     if (mp3_bytes > 0) {
         fwrite(mp3_buffer, 1, mp3_bytes, output);
+        printf(">> %d\n",mp3_bytes);
+        count++;
     }
 
+    printf("# %d\n",count);
     // Stop measuring time
     clock_gettime(CLOCK_REALTIME, &t_end);
 

@@ -43,5 +43,5 @@ clean:
 
 # Run target
 run:
-	./$(EXECUTABLE) input.mp3 1.8
-	# cp output.mp3 /mnt/d/output.mp3
+	./$(EXECUTABLE) input.mp3 output.mp3 1.8 6
+	cp output.mp3 /mnt/d/output.mp3
